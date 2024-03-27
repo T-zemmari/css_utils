@@ -1,4 +1,17 @@
-.contenedor_app{
-  width: 100vw;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
   min-height: 100vh;
+  background-image: url('./assets/imgs/bg_gradient_2.png');
+  background-position: center;
+  background-size: cover;
+}
+.contenedor_app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
