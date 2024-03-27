@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SwAlert from "../SwAlert/SwAlert";
 
 const BoxShadowGeneretor = () => {
   const [hOffset, setHOffset] = useState(0);
@@ -11,7 +12,7 @@ const BoxShadowGeneretor = () => {
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(`box-shadow: ${boxShadowStyle};`);
-    alert("CSS copiado al portapapeles!");
+    SwAlert("CSS copiado al portapapeles!");
   };
 
   return (
