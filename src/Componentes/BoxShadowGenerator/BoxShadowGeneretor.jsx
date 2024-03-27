@@ -52,7 +52,7 @@ const BoxShadowGeneretor = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-[580px] p-12 sm:mt-36 border-2 bg-white">
+      <div className="w-full sm:max-w-7xl min-h-[580px] p-12 sm:mt-36  bg-white sm:rounded-lg">
         <div className="p-4 h-[580px]">
           <div className="h-[90%] flex flex-row justify-between items-center gap-8">
             <div
