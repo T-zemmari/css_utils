@@ -52,15 +52,15 @@ const BoxShadowGeneretor = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-[580px] p-12 sm:mt-36  bg-white sm:rounded-lg">
-        <div className="p-4 h-[580px]">
-          <div className="h-[90%] flex flex-row justify-between items-center gap-8">
+      <div className="w-full sm:max-w-7xl min-h-[764px] p-12 sm:mt-12">
+        <div className="w-full p-4 h-[764px] flex justify-center items-center">
+          <div className="w-full h-[90%] flex flex-row justify-between items-center gap-8">
             <div
-              className="w-3/6 h-[100%] flex justify-center items-center"
+              className="w-3/6 h-[100%] flex justify-center items-center bg-white sm:rounded-lg"
               id="contenedor_padre_preview"
             >
               <button
-                className="w-40 h-40 bg-white border border-gray-300 shadow-lg flex justify-center items-center rounded-lg"
+                className="w-40 h-40 bg-white shadow-lg flex justify-center items-center rounded-lg"
                 style={{
                   boxShadow: generateBoxShadow(),
                   backgroundColor: backgroundColor,
@@ -70,7 +70,7 @@ const BoxShadowGeneretor = () => {
                 {translation.preview}
               </button>
             </div>
-            <div className="w-3/6 flex flex-col justify-center items-end">
+            <div className="w-3/6 flex flex-col justify-center items-end p-8 bg-white sm:rounded-lg">
               <img
                 src={language === "es" ? UKFlag : SpainFlag}
                 alt={language === "es" ? translation.spainFlagAlt : translation.ukFlagAlt}
