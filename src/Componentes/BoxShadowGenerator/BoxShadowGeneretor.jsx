@@ -2,6 +2,7 @@ import { useState } from "react";
 import SwAlert from "../SwAlert/SwAlert";
 import SpainFlag from "../../assets/imgs/bandera_sp.png";
 import UKFlag from "../../assets/imgs/bandera_uk.png";
+import translations from "../../translation.json";
 
 const BoxShadowGeneretor = () => {
   const initialHOffset = 0;
@@ -19,7 +20,10 @@ const BoxShadowGeneretor = () => {
     initialBackgroundColor
   );
   const [inset, setInset] = useState(false);
-  const [language, setLanguage] = useState("es"); // Default language: Spanish
+  const [language, setLanguage] = useState("en"); 
+
+  // Obtenemos las traducciones según el idioma seleccionado
+  const translation = translations[language];
 
   const generateBoxShadow = () => {
     const insetValue = inset ? "inset" : "";
@@ -29,7 +33,7 @@ const BoxShadowGeneretor = () => {
   const handleCopyClick = () => {
     const cssCode = `box-shadow: ${generateBoxShadow()};\nbackground-color: ${backgroundColor};`;
     navigator.clipboard.writeText(cssCode);
-    SwAlert("CSS copiado al portapapeles!");
+    SwAlert(translation.copyToClipboard);
   };
 
   const handleReset = () => {
@@ -55,7 +59,7 @@ const BoxShadowGeneretor = () => {
               className="w-3/6 h-[100%] flex justify-center items-center"
               id="contenedor_padre_preview"
             >
-              <div
+              <button
                 className="w-40 h-40 bg-white border border-gray-300 shadow-lg flex justify-center items-center rounded-lg"
                 style={{
                   boxShadow: generateBoxShadow(),
@@ -63,13 +67,13 @@ const BoxShadowGeneretor = () => {
                 }}
                 id="contenedor_preview"
               >
-                Vista Previa
-              </div>
+                {translation.preview}
+              </button>
             </div>
             <div className="w-3/6 flex flex-col justify-center items-end">
               <img
-                src={language === "es" ? SpainFlag : UKFlag}
-                alt={language === "es" ? "Bandera de España" : "UK Flag"}
+                src={language === "es" ? UKFlag : SpainFlag}
+                alt={language === "es" ? translation.spainFlagAlt : translation.ukFlagAlt}
                 className="h-8 w-8 cursor-pointer"
                 onClick={() =>
                   handleLanguageChange(language === "es" ? "en" : "es")
@@ -77,7 +81,7 @@ const BoxShadowGeneretor = () => {
               />
               <div className="w-full mt-4">
                 <div className="w-full flex flex-col">
-                  <label>Desplazamiento Horizontal:</label>
+                  <label>{translation.horizontalOffset}</label>
                   <input
                     type="range"
                     min="-50"
@@ -87,7 +91,7 @@ const BoxShadowGeneretor = () => {
                   />
                 </div>
                 <div className="w-full flex flex-col">
-                  <label>Desplazamiento Vertical:</label>
+                  <label>{translation.verticalOffset}</label>
                   <input
                     type="range"
                     min="-50"
@@ -97,7 +101,7 @@ const BoxShadowGeneretor = () => {
                   />
                 </div>
                 <div className="w-full flex flex-col">
-                  <label>Radio de Desenfoque:</label>
+                  <label>{translation.blurRadius}</label>
                   <input
                     type="range"
                     min="0"
@@ -107,7 +111,7 @@ const BoxShadowGeneretor = () => {
                   />
                 </div>
                 <div className="w-full flex flex-col">
-                  <label>Radio de Extensión:</label>
+                  <label>{translation.spreadRadius}</label>
                   <input
                     type="range"
                     min="-50"
@@ -117,7 +121,7 @@ const BoxShadowGeneretor = () => {
                   />
                 </div>
                 <div className="w-full flex flex-col">
-                  <label>Color de la Sombra:</label>
+                  <label>{translation.shadowColor}</label>
                   <input
                     type="color"
                     value={shadowColor}
@@ -125,7 +129,7 @@ const BoxShadowGeneretor = () => {
                   />
                 </div>
                 <div className="w-full flex flex-col">
-                  <label>Color de Fondo:</label>
+                  <label>{translation.backgroundColor}</label>
                   <input
                     type="color"
                     value={backgroundColor}
@@ -139,7 +143,7 @@ const BoxShadowGeneretor = () => {
                     } text-gray-800 py-1 px-4 rounded`}
                     onClick={() => setInset(false)}
                   >
-                    Normal
+                    {translation.regular}
                   </button>
                   <button
                     className={`${
@@ -147,18 +151,18 @@ const BoxShadowGeneretor = () => {
                     } text-gray-800 py-1 px-4 rounded`}
                     onClick={() => setInset(true)}
                   >
-                    Encajado
+                    {translation.inset}
                   </button>
                   <button
                     className="bg-gray-200 text-gray-800 py-1 px-4 rounded"
                     onClick={handleReset}
                   >
-                    Reiniciar
+                    {translation.reset}
                   </button>
                 </div>
                 <div className="w-full mt-4 p-4 bg-gray-100">
                   <label className="block mb-2 font-semibold">
-                    CSS generado:
+                    {translation.generatedCSS}
                   </label>
                   <textarea
                     className="w-full h-24 p-2 border border-gray-300 rounded"
@@ -170,7 +174,7 @@ const BoxShadowGeneretor = () => {
                   className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
                   onClick={handleCopyClick}
                 >
-                  Copiar CSS
+                  {translation.copyCSS}
                 </button>
               </div>
             </div>

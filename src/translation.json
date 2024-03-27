@@ -1,0 +1,37 @@
+{
+    "es": {
+      "preview": "Vista Previa",
+      "spainFlagAlt": "Bandera de España",
+      "ukFlagAlt": "Bandera del Reino Unido",
+      "horizontalOffset": "Desplazamiento Horizontal:",
+      "verticalOffset": "Desplazamiento Vertical:",
+      "blurRadius": "Radio de Desenfoque:",
+      "spreadRadius": "Radio de Extensión:",
+      "shadowColor": "Color de la Sombra:",
+      "backgroundColor": "Color de Fondo:",
+      "regular": "Normal",
+      "inset": "Encajado",
+      "reset": "Reiniciar",
+      "generatedCSS": "CSS generado:",
+      "copyCSS": "Copiar CSS",
+      "copyToClipboard": "CSS copiado al portapapeles!"
+    },
+    "en": {
+      "preview": "Preview",
+      "spainFlagAlt": "Spain Flag",
+      "ukFlagAlt": "UK Flag",
+      "horizontalOffset": "Horizontal Offset:",
+      "verticalOffset": "Vertical Offset:",
+      "blurRadius": "Blur Radius:",
+      "spreadRadius": "Spread Radius:",
+      "shadowColor": "Shadow Color:",
+      "backgroundColor": "Background Color:",
+      "regular": "Regular",
+      "inset": "Inset",
+      "reset": "Reset",
+      "generatedCSS": "Generated CSS:",
+      "copyCSS": "Copy CSS",
+      "copyToClipboard": "CSS copied to clipboard!"
+    }
+  }
+  
