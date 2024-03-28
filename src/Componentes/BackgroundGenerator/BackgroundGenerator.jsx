@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { saveSvgAsPng } from "save-svg-as-png";
 import { saveAs } from "file-saver";
 import "./BackgroundGenerator.css";

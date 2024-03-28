@@ -16,7 +16,7 @@ const WaveComponent = ({
   }
 
   return (
-    <div className="background-generator">
+    <div className="background-generator" id="svg-background">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
