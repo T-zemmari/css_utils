@@ -10,9 +10,8 @@ const WaveComponent = ({
   for (let i = 0; i < waveCount; i++) {
     const startY = (i * (100 / waveCount)) + (waveHeight / 2);
     const endY = (i * (100 / waveCount)) - (waveHeight / 2);
-    const controlPointY = (i * (100 / waveCount));
 
-    const path = `M0 ${startY} Q 25 ${controlPointY} 50 ${endY} Q 75 ${controlPointY} 100 ${startY} V 100 H 0 Z`;
+    const path = `M0 ${startY} C 20 ${startY} 20 ${endY} 50 ${endY} C 80 ${endY} 80 ${startY} 100 ${startY} V 100 H 0 Z`;
     wavePaths.push(path);
   }
 

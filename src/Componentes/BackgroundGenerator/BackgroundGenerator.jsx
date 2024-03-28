@@ -8,7 +8,7 @@ const BackgroundGenerator = () => {
   const [backgroundColor, setBackgroundColor] = useState("#4562f2");
   const [initialColor, setInitialColor] = useState("#ffffff");
   const [waveHeight, setWaveHeight] = useState(100);
-  const [waveCount, setWaveCount] = useState(1);
+  const [waveCount, setWaveCount] = useState(5);
 
   const handleExportAsPNG = () => {
     saveSvgAsPng(document.getElementById("svg-background"), "background.png");
