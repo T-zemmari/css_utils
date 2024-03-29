@@ -4,6 +4,9 @@ import { saveAs } from "file-saver";
 import "./BackgroundGenerator.css";
 import WaveComponent from "../WaveComponent/WaveComponent";
 import iconoSvG from "../../assets/imgs/wave_1.png";
+import SpainFlag from "../../assets/imgs/bandera_sp.png";
+import UKFlag from "../../assets/imgs/bandera_uk.png";
+import translations from "../../translation.json";
 
 const BackgroundGenerator = () => {
   const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
@@ -11,6 +14,10 @@ const BackgroundGenerator = () => {
   const [waveHeight, setWaveHeight] = useState(100);
   const [waveCount, setWaveCount] = useState(5);
   const [renderWave, setRenderWave] = useState("vertical");
+  const [language, setLanguage] = useState("en");
+
+  // Obtenemos las traducciones según el idioma seleccionado
+  const translation = translations[language];
 
   const [svgCode, setSvgCode] = useState("");
 
@@ -53,11 +60,15 @@ const BackgroundGenerator = () => {
     setRenderWave(e);
   };
 
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+  };
+
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[650px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
+      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[680px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
         <div
-          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[650px]  bg-white sm:rounded-lg `}
+          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[680px]  bg-white sm:rounded-lg `}
         >
           <div className="w-full sm:h-3/6 flex justify-center">
             <div className="w-full h-[50%] flex flex-col justify-start items-center mt-8">
@@ -84,14 +95,29 @@ const BackgroundGenerator = () => {
         </div>
 
         <div
-          className={`contenedor_padre_taller w-full sm:w-2/6 h-[650px] mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}
+          className={`contenedor_padre_taller w-full  sm:w-2/6 h-[680px] mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}
         >
+          <div className="w-full flex justify-end">
+            <img
+              src={language === "es" ? UKFlag : SpainFlag}
+              alt={
+                language === "es"
+                  ? translation.spainFlagAlt
+                  : translation.ukFlagAlt
+              }
+              className="h-8 w-8 cursor-pointer"
+              onClick={() =>
+                handleLanguageChange(language === "es" ? "en" : "es")
+              }
+            />
+          </div>
+
           <div className="w-full h-[80%] flex justify-start items-start">
             <div className="contenedor_manipulacion w-full">
               <div className="w-full flex flex-row justify-center items-center gap-8">
-                <div className="w-[3/6] flex flex-col">
+                <div className="w-[3/6] flex flex-col justify-center items-center">
                   <label htmlFor="">
-                    <b>Fondo:</b>
+                    <b>{translation.bg}</b>
                   </label>
                   <input
                     className="w-[50px] h-[50px]"
@@ -100,9 +126,9 @@ const BackgroundGenerator = () => {
                     onChange={(e) => handleBackground(e.target.value)}
                   />
                 </div>
-                <div className="w-[3/6] flex flex-col ">
+                <div className="w-[3/6] flex flex-col justify-center items-center">
                   <label htmlFor="">
-                    <b>Onda:</b>
+                    <b>{translation.wave}</b>
                   </label>
                   <input
                     className="w-[50px] h-[50px]"
@@ -114,7 +140,7 @@ const BackgroundGenerator = () => {
               </div>
               <div className="w-full flex flex-col mt-6">
                 <label htmlFor="">
-                  <b>Dirección ondas:</b>
+                  <b>{translation.direction}</b>
                 </label>
                 <select
                   className="border rounded bg-white py-2 px-4 text-gray-800 border-indigo-200 mt-3"
@@ -127,7 +153,7 @@ const BackgroundGenerator = () => {
               </div>
               <div className="w-full flex flex-col mt-3">
                 <label htmlFor="">
-                  <b>Altura de las ondas:</b>
+                  <b>{translation.waveHight}</b>
                 </label>
                 <input
                   type="range"
@@ -141,7 +167,7 @@ const BackgroundGenerator = () => {
               </div>
               <div className="w-full flex flex-col mt-3">
                 <label htmlFor="">
-                  <b>Número de ondas:</b>
+                  <b>{translation.waveCountNumber}</b>
                 </label>
                 <input
                   type="range"
@@ -155,7 +181,7 @@ const BackgroundGenerator = () => {
               </div>
               <div className="w-full mt-5 p-4 bg-gray-100">
                 <label className="block mb-2 font-semibold">
-                  SVG GENERADO :
+                  {translation.SvgGenerated} :
                 </label>
                 <textarea
                   className="w-full h-28 p-2 border border-gray-300 rounded"
@@ -165,9 +191,9 @@ const BackgroundGenerator = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-[20%] flex flex-col justify-center items-start border-2 rounded-lg ">
+          <div className="w-full h-[15%] flex flex-col justify-center items-start border-2 rounded-lg ">
             <span className="w-full text-center text-red-400 font-bold">
-              <b>Exportar</b>
+              <b>{translation.export}</b>
             </span>
             <div className="w-full  flex justify-center items-center sm:p-2">
               <button
