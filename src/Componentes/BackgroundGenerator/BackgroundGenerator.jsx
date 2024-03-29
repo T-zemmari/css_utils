@@ -65,10 +65,10 @@ const BackgroundGenerator = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[680px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg p-1 ">
+      <div className="w-full md:max-w-7xl min-h-screen md:min-h-[680px]  md:mt-36 flex flex-col justify-start items-start md:gap-3 md:flex-row rounded-lg p-1 ">
 
-        <div className={`contenedor_padre_preview w-full h-[180px] mt-[80px] sm:w-4/6 sm:h-[680px]  bg-white rounded-lg`}>
-          <div className="w-full h-full sm:h-3/6 flex justify-center">
+        <div className={`contenedor_padre_preview w-full h-[180px] mt-[80px] md:w-4/6 md:h-[680px]  bg-white rounded-lg`}>
+          <div className="w-full h-full md:h-3/6 flex justify-center">
             <div className="w-full h-full md:h-[50%] flex flex-col justify-start items-center mt-8">
               <h1 className="text-black text-[25px] md:text-[50px] font-bold text-[#4562f2]">
                 BACKGROUND-WAVE
@@ -79,7 +79,7 @@ const BackgroundGenerator = () => {
               ></div>
             </div>
           </div>
-          <div className="w-full h-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative border-t border-[#c9c9c9]" style={{ backgroundColor: `${backgroundColor}` }}>
+          <div className="w-full h-full md:h-3/6 background-container contenedor_preview md:rounded-b-lg relative border-t border-[#c9c9c9]" style={{ backgroundColor: `${backgroundColor}` }}>
             <WaveComponent
               initialColor={initialColor}
               waveHeight={waveHeight}
@@ -89,7 +89,7 @@ const BackgroundGenerator = () => {
           </div>
         </div>
 
-        <div className={`contenedor_padre_taller w-full sm:w-2/6 h-[680px] mt-[200px] md:mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}>
+        <div className={`contenedor_padre_taller w-full md:w-2/6 h-[680px] mt-[200px] md:mt-24 md:mt-0 p-2 md:p-4 bg-white md:rounded-lg`}>
           <div className="w-full flex justify-end">
             <img
               src={language === "es" ? UKFlag : SpainFlag}
@@ -188,7 +188,7 @@ const BackgroundGenerator = () => {
             <span className="w-full text-center text-red-400 font-bold">
               <b>{translation.export}</b>
             </span>
-            <div className="w-full  flex justify-center items-center sm:p-2">
+            <div className="w-full  flex justify-center items-center md:p-2">
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
                 onClick={handleExportAsPNG}
