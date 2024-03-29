@@ -9,7 +9,8 @@ body {
   background-position: center;
   background-size: cover;
 }
-.contenedor_app {
+.App {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

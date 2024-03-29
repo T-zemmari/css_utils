@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="contenedor_app">
+        <div className="App">
           <Navbar />
           <Routes>
             <Route path="/" exact element={<LandingPage />} />

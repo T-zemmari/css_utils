@@ -3,13 +3,14 @@ import { saveSvgAsPng } from "save-svg-as-png";
 import { saveAs } from "file-saver";
 import "./BackgroundGenerator.css";
 import WaveComponent from "../WaveComponent/WaveComponent";
+import iconoSvG from "../../assets/imgs/wave_1.png";
 
 const BackgroundGenerator = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#EDEDED");
+  const [backgroundColor, setBackgroundColor] = useState("#fff");
   const [initialColor, setInitialColor] = useState("#4562f2");
   const [waveHeight, setWaveHeight] = useState(100);
   const [waveCount, setWaveCount] = useState(5);
-  const [renderWave, setRenderWave] = useState('vertical');
+  const [renderWave, setRenderWave] = useState("vertical");
 
   const handleExportAsPNG = () => {
     saveSvgAsPng(document.getElementById("svg-background"), "background.png");
@@ -45,15 +46,20 @@ const BackgroundGenerator = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[580px] p-2 sm:mt-36 flex flex-col-reverse justify-start items-start sm:gap-3 sm:flex-row sm:rounded-lg ">
+      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[580px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
         <div
-          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[580px]  bg-white sm:rounded-lg`}
+          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[580px]  bg-white sm:rounded-lg `}
         >
-          <div className="w-full sm:h-3/6 flex justify-center items-start font-bold ">
-            <h1 clasName="text-black text-[50px]">BACKGROUND-WAVE</h1>
+          <div className="w-full sm:h-3/6 flex justify-center">
+            <div className="w-full h-[50%] flex flex-col justify-start items-center">
+              <h1 className="text-black text-[50px] font-bold">
+                BACKGROUND-WAVE
+              </h1>
+              <div className="w-[80px] h-[80px] bg-center bg-contain bg-no-repeat" style={{backgroundImage:`url(${iconoSvG})`}}></div>
+            </div>
           </div>
           <div
-            className="w-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative"
+            className="w-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative border-t border-[#c9c9c9]"
             style={{ backgroundColor: `${backgroundColor}` }}
           >
             <WaveComponent
@@ -92,7 +98,11 @@ const BackgroundGenerator = () => {
               </div>
               <div className="w-full flex flex-col mt-10">
                 <label htmlFor="">Dirección ondas:</label>
-                <select className="border-1 border-indigo-200 mt-2" id="select_render_ondas" onChange={(e)=>handleRenderWave(e.target.value)}>
+                <select
+                  className="border-1 border-indigo-200 mt-2"
+                  id="select_render_ondas"
+                  onChange={(e) => handleRenderWave(e.target.value)}
+                >
                   <option value="vertical">Vertical</option>
                   <option value="horizontal">Horizontal</option>
                 </select>
