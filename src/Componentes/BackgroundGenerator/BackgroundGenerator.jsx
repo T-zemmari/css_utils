@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { saveSvgAsPng } from "save-svg-as-png";
 import { saveAs } from "file-saver";
-import "./BackgroundGenerator.css";
 import WaveComponent from "../WaveComponent/WaveComponent";
 import iconoSvG from "../../assets/imgs/wave_1.png";
 import SpainFlag from "../../assets/imgs/bandera_sp.png";
@@ -66,13 +65,12 @@ const BackgroundGenerator = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[680px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
-        <div
-          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[680px]  bg-white sm:rounded-lg `}
-        >
-          <div className="w-full sm:h-3/6 flex justify-center">
-            <div className="w-full h-[50%] flex flex-col justify-start items-center mt-8">
-              <h1 className="text-black text-[50px] font-bold text-[#4562f2]">
+      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[680px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg p-1 ">
+
+        <div className={`contenedor_padre_preview w-full h-[180px] mt-[80px] sm:w-4/6 sm:h-[680px]  bg-white rounded-lg`}>
+          <div className="w-full h-full sm:h-3/6 flex justify-center">
+            <div className="w-full h-full md:h-[50%] flex flex-col justify-start items-center mt-8">
+              <h1 className="text-black text-[25px] md:text-[50px] font-bold text-[#4562f2]">
                 BACKGROUND-WAVE
               </h1>
               <div
@@ -81,10 +79,7 @@ const BackgroundGenerator = () => {
               ></div>
             </div>
           </div>
-          <div
-            className="w-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative border-t border-[#c9c9c9]"
-            style={{ backgroundColor: `${backgroundColor}` }}
-          >
+          <div className="w-full h-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative border-t border-[#c9c9c9]" style={{ backgroundColor: `${backgroundColor}` }}>
             <WaveComponent
               initialColor={initialColor}
               waveHeight={waveHeight}
@@ -94,9 +89,7 @@ const BackgroundGenerator = () => {
           </div>
         </div>
 
-        <div
-          className={`contenedor_padre_taller w-full  sm:w-2/6 h-[680px] mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}
-        >
+        <div className={`contenedor_padre_taller w-full sm:w-2/6 h-[680px] mt-[200px] md:mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}>
           <div className="w-full flex justify-end">
             <img
               src={language === "es" ? UKFlag : SpainFlag}
