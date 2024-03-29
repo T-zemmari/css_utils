@@ -28,14 +28,14 @@ const Navbar = () => {
             </div>
             <div className="hidden sm:ml-6 sm:flex justify-end items-center">
               <Link to={`/box-shadow-generator`}>
-                <a className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Generador de Sombra
-                </a>
+                </span>
               </Link>
               <Link to={`/background-generator`}>
-                <a className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Generador de Fondo
-                </a>
+                </span>
               </Link>
             </div>
           </div>
@@ -84,14 +84,14 @@ const Navbar = () => {
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link to={`/box-shadow-generator`}>
-            <a className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Generador de Sombra
-            </a>
+            </span>
           </Link>
           <Link to={`/background-generator`}>
-            <a className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Generador de Fondo
-            </a>
+            </span>
           </Link>
         </div>
       </div>
