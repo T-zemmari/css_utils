@@ -5,26 +5,22 @@ import { useEffect, useState } from "react";
 const LandingPage = () => {
   const [boxSelected, setBoxselected] = useState("");
 
-  const softShadows = shadowsJson.softShadows;
-  const hoverEffects = shadowsJson.hoverEffects;
-  const glowingEffects = shadowsJson.glowingEffects;
-  const borderEffects = shadowsJson.borderEffects;
-  const radiantEffects = shadowsJson.radiantEffects;
+  const lightShadows = shadowsJson.lightShadows;
+  const aggressiveShadows = shadowsJson.aggressiveShadows;
+  const mildShadows = shadowsJson.mildShadows;
+  const colorShadows = shadowsJson.colorShadows;
+  const hoverShadows = shadowsJson.hoverShadows;
 
-  const getShadowStyle = (item) => {
+  const getShadowStyle = (item, isHover) => {
     let shadowStyle = "0px 0px 0px rgba(0, 0, 0, 0)";
-    if (item) shadowStyle = item.style;
+    if (item) {
+      shadowStyle = isHover ? item.hoverStyle : item.style;
+    }
     return shadowStyle;
   };
 
   useEffect(() => {
-    console.log(
-      softShadows,
-      hoverEffects,
-      glowingEffects,
-      borderEffects,
-      radiantEffects
-    );
+    console.log(lightShadows, aggressiveShadows);
   }, []);
 
   return (
@@ -37,7 +33,7 @@ const LandingPage = () => {
           <div className="w-full min-h-[180px] flex flex-col justify-center items-center p-10">
             <h2 className="text-2xl mb-10 font-bold">SOFT-SHADOWS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 sm:gap:20">
-              {softShadows?.map((item) => (
+              {lightShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
                   buttonText={`Button ${item.id}`}
@@ -46,10 +42,13 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="w-full h-[100%] bg-white mt-4 flex flex-col justify-start items-start rounded-lg">
           <div className="w-full min-h-[180px] flex flex-col justify-center items-center p-10">
-            <h2 className="text-2xl mb-10 font-bold">Hover-Effects</h2>
+            <h2 className="text-2xl mb-10 font-bold">MIDDLE-SHADOWS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 sm:gap:20">
-              {hoverEffects?.map((item) => (
+              {mildShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
                   buttonText={`Button ${item.id}`}
@@ -58,10 +57,13 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="w-full h-[100%] bg-white mt-4 flex flex-col justify-start items-start rounded-lg">
           <div className="w-full min-h-[180px] flex flex-col justify-center items-center p-10">
-            <h2 className="text-2xl mb-10 font-bold">Glowing Effects</h2>
+            <h2 className="text-2xl mb-10 font-bold">AGRESSIVE-SHADOWS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 sm:gap:20">
-              {glowingEffects?.map((item) => (
+              {aggressiveShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
                   buttonText={`Button ${item.id}`}
@@ -70,10 +72,13 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="w-full h-[100%] bg-white mt-4 flex flex-col justify-start items-start rounded-lg">
           <div className="w-full min-h-[180px] flex flex-col justify-center items-center p-10">
-            <h2 className="text-2xl mb-10 font-bold">Border Effects</h2>
+            <h2 className="text-2xl mb-10 font-bold">COLORS-SHADOWS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 sm:gap:20">
-              {borderEffects?.map((item) => (
+              {colorShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
                   buttonText={`Button ${item.id}`}
@@ -82,10 +87,13 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="w-full h-[100%] bg-white mt-4 flex flex-col justify-start items-start rounded-lg">
           <div className="w-full min-h-[180px] flex flex-col justify-center items-center p-10">
-            <h2 className="text-2xl mb-4 font-bold">Radiant Effects</h2>
+            <h2 className="text-2xl mb-10 font-bold">HOVERD-SHADOWS</h2>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 sm:gap:20">
-              {radiantEffects?.map((item) => (
+              {hoverShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
                   buttonText={`Button ${item.id}`}
