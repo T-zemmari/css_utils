@@ -29,12 +29,12 @@ const Navbar = () => {
             <div className="hidden sm:ml-6 sm:flex justify-end items-center">
               <Link to={`/box-shadow-generator`}>
                 <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Generador de Sombra
+                  Box-shadow
                 </span>
               </Link>
               <Link to={`/background-generator`}>
                 <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Generador de Fondo
+                  Bg-Waves
                 </span>
               </Link>
             </div>

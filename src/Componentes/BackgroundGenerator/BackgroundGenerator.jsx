@@ -6,7 +6,7 @@ import WaveComponent from "../WaveComponent/WaveComponent";
 import iconoSvG from "../../assets/imgs/wave_1.png";
 
 const BackgroundGenerator = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#fff");
+  const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [initialColor, setInitialColor] = useState("#4562f2");
   const [waveHeight, setWaveHeight] = useState(100);
   const [waveCount, setWaveCount] = useState(5);
