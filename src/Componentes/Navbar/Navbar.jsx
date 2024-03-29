@@ -85,12 +85,12 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link to={`/box-shadow-generator`}>
             <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Generador de Sombra
+              Box-shadow
             </span>
           </Link>
           <Link to={`/background-generator`}>
             <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-              Generador de Fondo
+              Bg-Waves
             </span>
           </Link>
         </div>
