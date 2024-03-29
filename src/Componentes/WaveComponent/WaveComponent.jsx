@@ -17,7 +17,7 @@ const WaveComponent = ({ initialColor, waveHeight, waveCount, renderWave }) => {
       height="100%"
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
       preserveAspectRatio="none"
-      style={{ position: "absolute", bottom: 0, left: 0, zIndex: -1 }}
+      style={{ position: "absolute", bottom: 0, left: 0 }}
     >
       <defs>
         <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
