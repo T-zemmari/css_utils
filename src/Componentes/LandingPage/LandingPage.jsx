@@ -11,14 +11,6 @@ const LandingPage = () => {
   const colorShadows = shadowsJson.colorShadows;
   const hoverShadows = shadowsJson.hoverShadows;
 
-  const getShadowStyle = (item, isHover) => {
-    let shadowStyle = "0px 0px 0px rgba(0, 0, 0, 0)";
-    if (item) {
-      shadowStyle = isHover ? item.hoverStyle : item.style;
-    }
-    return shadowStyle;
-  };
-
   useEffect(() => {
     console.log(lightShadows, aggressiveShadows);
   }, []);
@@ -36,8 +28,9 @@ const LandingPage = () => {
               {lightShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
-                  buttonText={`Button ${item.id}`}
-                  shadowStyle={getShadowStyle(item)}
+                  buttonText={item.name}
+                  shadowStyle={item.style}
+                  hoverStyle={item?.hoverStyle}
                 />
               ))}
             </div>
@@ -51,8 +44,9 @@ const LandingPage = () => {
               {mildShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
-                  buttonText={`Button ${item.id}`}
-                  shadowStyle={getShadowStyle(item)}
+                  buttonText={item.name}
+                  shadowStyle={item.style}
+                  hoverStyle={item?.hoverStyle}
                 />
               ))}
             </div>
@@ -66,8 +60,9 @@ const LandingPage = () => {
               {aggressiveShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
-                  buttonText={`Button ${item.id}`}
-                  shadowStyle={getShadowStyle(item)}
+                  buttonText={item.name}
+                  shadowStyle={item.style}
+                  hoverStyle={item?.hoverStyle}
                 />
               ))}
             </div>
@@ -81,8 +76,9 @@ const LandingPage = () => {
               {colorShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
-                  buttonText={`Button ${item.id}`}
-                  shadowStyle={getShadowStyle(item)}
+                  buttonText={item.name}
+                  shadowStyle={item.style}
+                  hoverStyle={item?.hoverStyle}
                 />
               ))}
             </div>
@@ -96,8 +92,9 @@ const LandingPage = () => {
               {hoverShadows?.map((item) => (
                 <ButtonShadow
                   key={item.id}
-                  buttonText={`Button ${item.id}`}
-                  shadowStyle={getShadowStyle(item)}
+                  buttonText={item.name}
+                  shadowStyle={item.style}
+                  hoverStyle={item?.hoverStyle}
                 />
               ))}
             </div>
