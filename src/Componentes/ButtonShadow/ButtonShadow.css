@@ -1,9 +1,8 @@
 .button-custom-class {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
+  padding: 20px 20px;
   font-size: 16px;
   font-weight: bold;
   border: none;
