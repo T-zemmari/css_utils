@@ -4,6 +4,8 @@ const WaveComponent = ({ initialColor, waveHeight, waveCount, renderWave }) => {
   const viewBoxWidth = renderWave === "horizontal" ? 100 * waveCount : 100;
   const viewBoxHeight = renderWave === "horizontal" ? waveHeight : waveHeight * waveCount;
 
+ 
+  
   useEffect(() => {
     console.log("initialColor", initialColor);
     console.log("waveHeight", waveHeight);
@@ -18,6 +20,7 @@ const WaveComponent = ({ initialColor, waveHeight, waveCount, renderWave }) => {
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
       preserveAspectRatio="none"
       style={{ position: "absolute", bottom: 0, left: 0 }}
+      id="svg-background"
     >
       <defs>
         <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">

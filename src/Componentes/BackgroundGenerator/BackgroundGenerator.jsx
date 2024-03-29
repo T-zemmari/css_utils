@@ -12,9 +12,7 @@ const BackgroundGenerator = () => {
   const [waveCount, setWaveCount] = useState(5);
   const [renderWave, setRenderWave] = useState("vertical");
 
-  const handleExportAsPNG = () => {
-    saveSvgAsPng(document.getElementById("svg-background"), "background.png");
-  };
+  const [svgCode, setSvgCode] = useState("");
 
   const handleExportAsSVG = () => {
     const svgData = new XMLSerializer().serializeToString(
@@ -22,6 +20,17 @@ const BackgroundGenerator = () => {
     );
     const blob = new Blob([svgData], { type: "image/svg+xml" });
     saveAs(blob, "background.svg");
+  };
+
+  const handleExportAsCode = () => {
+    const svgData = new XMLSerializer().serializeToString(
+      document.getElementById("svg-background")
+    );
+    setSvgCode(svgData);
+  };
+
+  const handleExportAsPNG = () => {
+    saveSvgAsPng(document.getElementById("svg-background"), "background.png");
   };
 
   const handleBackground = (color) => {
@@ -52,10 +61,13 @@ const BackgroundGenerator = () => {
         >
           <div className="w-full sm:h-3/6 flex justify-center">
             <div className="w-full h-[50%] flex flex-col justify-start items-center">
-              <h1 className="text-black text-[50px] font-bold">
+              <h1 className="text-black text-[50px] font-bold text-[#4562f2]">
                 BACKGROUND-WAVE
               </h1>
-              <div className="w-[80px] h-[80px] bg-center bg-contain bg-no-repeat" style={{backgroundImage:`url(${iconoSvG})`}}></div>
+              <div
+                className="w-[80px] h-[80px] bg-center bg-contain bg-no-repeat"
+                style={{ backgroundImage: `url(${iconoSvG})` }}
+              ></div>
             </div>
           </div>
           <div
@@ -131,6 +143,16 @@ const BackgroundGenerator = () => {
                   }
                 />
               </div>
+              <div className="w-full mt-4 p-4 bg-gray-100">
+                <label className="block mb-2 font-semibold">
+                  SVG GENERADO :
+                </label>
+                <textarea
+                  className="w-full h-24 p-2 border border-gray-300 rounded"
+                  value={svgCode}
+                  readOnly
+                />
+              </div>
             </div>
           </div>
           <div className="w-full h-[20%] flex flex-col justify-center items-start border-2 rounded-lg ">
@@ -149,6 +171,12 @@ const BackgroundGenerator = () => {
                 onClick={handleExportAsSVG}
               >
                 SVG
+              </button>
+              <button
+                className="bg-[#c50abe] text-white px-4 py-2 rounded mr-4"
+                onClick={handleExportAsCode}
+              >
+                Code
               </button>
             </div>
           </div>
