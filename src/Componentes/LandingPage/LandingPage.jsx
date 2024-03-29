@@ -1,6 +1,7 @@
 import ButtonShadow from "../ButtonShadow/ButtonShadow";
 import shadowsJson from "../../shadows.json";
 import { useEffect, useState } from "react";
+import SwAlert from "../SwAlert/SwAlert";
 
 const LandingPage = () => {
   const [boxSelected, setBoxselected] = useState("");
@@ -16,6 +17,21 @@ const LandingPage = () => {
   useEffect(() => {
     console.log(lightShadows, aggressiveShadows);
   }, []);
+
+  const handleCopiarCss = (shadowCss, shadowCssHoverd) => {
+    let cssCode = `box-shadow:${shadowCss}`;
+    if (shadowCssHoverd != undefined) {
+      cssCode = `.elemento_css{
+        box-shadow:${shadowCss};
+      }`;
+      cssCode += `.elemento_css:hover{
+        box-shadow:${shadowCss};
+      }`;
+    }
+    navigator.clipboard.writeText(cssCode);
+    SwAlert(`Css copiado correctamente`);
+  };
+
 
   return (
     <>
@@ -33,6 +49,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -49,6 +66,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -65,6 +83,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -81,6 +100,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -97,6 +117,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -113,6 +134,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>
@@ -129,6 +151,7 @@ const LandingPage = () => {
                   buttonText={item.name}
                   shadowStyle={item.style}
                   hoverStyle={item?.hoverStyle}
+                  onClick={() => handleCopiarCss(item.style, item?.hoverStyle)}
                 />
               ))}
             </div>

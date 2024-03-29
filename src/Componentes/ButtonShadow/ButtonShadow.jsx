@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ButtonShadow.css";
 
-const ButtonShadow = ({ buttonText, shadowStyle, hoverStyle }) => {
+const ButtonShadow = ({ buttonText, shadowStyle, hoverStyle ,onClick}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [currentStyle, setCurrentStyle] = useState(shadowStyle);
 
@@ -29,6 +29,7 @@ const ButtonShadow = ({ buttonText, shadowStyle, hoverStyle }) => {
       style={{ boxShadow: `${currentStyle}` }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
     >
       {buttonText}
     </button>
