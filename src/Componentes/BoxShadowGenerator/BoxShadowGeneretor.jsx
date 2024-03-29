@@ -52,11 +52,11 @@ const BoxShadowGeneretor = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-[764px] p-12 sm:mt-12">
-        <div className="w-full p-4 h-[764px] flex justify-center items-center">
-          <div className="w-full h-[90%] flex flex-row justify-between items-center gap-8">
+      <div className="w-full md:max-w-7xl min-h-screen md:min-h-[764px] p-0 md:p-12 ">
+        <div className="w-full p-2 min-h-[300px] md:h-[764px] flex justify-center items-center mt-[70px] sm:mt-[50px]">
+          <div className="w-full md:h-[90%] flex flex-col md:flex-row md:justify-between md:items-center gap-8">
             <div
-              className="w-3/6 h-[100%] flex justify-center items-center bg-white sm:rounded-lg"
+              className="flex w-full md:w-3/6 h-[300px] md:h-[100%] justify-center items-center bg-white rounded-lg"
               id="contenedor_padre_preview"
             >
               <button
@@ -70,7 +70,7 @@ const BoxShadowGeneretor = () => {
                 {translation.preview}
               </button>
             </div>
-            <div className="w-3/6 flex flex-col justify-center items-end p-8 bg-white  sm:rounded-lg">
+            <div className="w-full md:w-3/6 md:h-[100%] flex flex-col justify-center items-end p-8 bg-white md:rounded-lg">
               <img
                 src={language === "es" ? UKFlag : SpainFlag}
                 alt={language === "es" ? translation.spainFlagAlt : translation.ukFlagAlt}

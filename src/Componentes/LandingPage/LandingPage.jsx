@@ -37,7 +37,7 @@ const LandingPage = () => {
     <>
       <ScrollToTopButton />
       <div className="w-full max-w-7xl min-h-screen p-2 sm:p-12 flex flex-col items-center">
-        <h1 className="text-[#71731f] text-[36px] sm:text-[56px] font-bold mt-[100px] sm:mt-12">
+        <h1 className="text-[#71731f] text-[36px] sm:text-[56px] font-bold mt-[80px] sm:mt-12">
           BOX-SHADOWS
         </h1>
         <div className="w-full h-[100%] bg-white mt-4 flex flex-col justify-start items-start rounded-lg">
