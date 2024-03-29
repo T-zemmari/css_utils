@@ -5,8 +5,8 @@ import "./BackgroundGenerator.css";
 import WaveComponent from "../WaveComponent/WaveComponent";
 
 const BackgroundGenerator = () => {
-  const [backgroundColor, setBackgroundColor] = useState("#4562f2");
-  const [initialColor, setInitialColor] = useState("#ffffff");
+  const [backgroundColor, setBackgroundColor] = useState("#EDEDED");
+  const [initialColor, setInitialColor] = useState("#4562f2");
   const [waveHeight, setWaveHeight] = useState(100);
   const [waveCount, setWaveCount] = useState(5);
 
