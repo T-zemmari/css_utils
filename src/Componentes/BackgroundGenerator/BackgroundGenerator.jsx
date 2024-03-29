@@ -60,7 +60,7 @@ const BackgroundGenerator = () => {
           className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[580px]  bg-white sm:rounded-lg `}
         >
           <div className="w-full sm:h-3/6 flex justify-center">
-            <div className="w-full h-[50%] flex flex-col justify-start items-center">
+            <div className="w-full h-[50%] flex flex-col justify-start items-center mt-4">
               <h1 className="text-black text-[50px] font-bold text-[#4562f2]">
                 BACKGROUND-WAVE
               </h1>
