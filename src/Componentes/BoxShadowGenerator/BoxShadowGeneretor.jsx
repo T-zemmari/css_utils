@@ -70,7 +70,7 @@ const BoxShadowGeneretor = () => {
                 {translation.preview}
               </button>
             </div>
-            <div className="w-3/6 flex flex-col justify-center items-end p-8 bg-white sm:rounded-lg">
+            <div className="w-3/6 flex flex-col justify-center items-end p-8 bg-white  sm:rounded-lg">
               <img
                 src={language === "es" ? UKFlag : SpainFlag}
                 alt={language === "es" ? translation.spainFlagAlt : translation.ukFlagAlt}

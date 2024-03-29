@@ -1,30 +1,63 @@
 {
-    "shadows": [
-      {
-        "id": 0,
-        "name": "Soft Shadow",
-        "style": "0px 4px 6px rgba(0, 0, 0, 0.1)"
-      },
-      {
-        "id": 1,
-        "name": "Subtle Shadow",
-        "style": "0px 4px 6px rgba(0, 0, 0, 0.05)"
-      },
-      {
-        "id": 2,
-        "name": "Deep Shadow",
-        "style": "0px 8px 12px rgba(0, 0, 0, 0.2)"
-      },
-      {
-        "id": 3,
-        "name": "Hover Shadow",
-        "style": "0px 4px 8px rgba(0, 0, 0, 0.2)"
-      },
-      {
-        "id": 4,
-        "name": "Outline Shadow",
-        "style": "0px 0px 0px 3px rgba(0, 0, 0, 0.2)"
-      }
+    "softShadows": [
+      { "id": 0, "name": "Soft Shadow", "style": "0px 4px 6px rgba(0, 0, 0, 0.1)" },
+      { "id": 1, "name": "Subtle Shadow", "style": "0px 4px 6px rgba(0, 0, 0, 0.05)" },
+      { "id": 2, "name": "Gentle Glow", "style": "0px 6px 10px rgba(0, 0, 0, 0.2)" },
+      { "id": 3, "name": "Ethereal Shadow", "style": "0px 8px 12px rgba(0, 0, 0, 0.15)" },
+      { "id": 4, "name": "Whispering Mist", "style": "0px 10px 14px rgba(0, 0, 0, 0.2)" },
+      { "id": 5, "name": "Velvet Touch", "style": "0px 12px 16px rgba(0, 0, 0, 0.1)" },
+      { "id": 6, "name": "Dreamy Shade", "style": "0px 14px 18px rgba(0, 0, 0, 0.2)" },
+      { "id": 7, "name": "Satin Haze", "style": "0px 16px 20px rgba(0, 0, 0, 0.1)" },
+      { "id": 8, "name": "Misty Dawn", "style": "0px 18px 22px rgba(0, 0, 0, 0.15)" },
+      { "id": 9, "name": "Silk Whisper", "style": "0px 20px 24px rgba(0, 0, 0, 0.1)" }
+    ],
+    "hoverEffects": [
+      { "id": 10, "name": "Hover Shadow", "style": "0px 4px 8px rgba(0, 0, 0, 0.2)" },
+      { "id": 11, "name": "Glowing Edge", "style": "0px 6px 10px rgba(255, 255, 255, 0.3)" },
+      { "id": 12, "name": "Luminous Aura", "style": "0px 8px 12px rgba(255, 255, 255, 0.25)" },
+      { "id": 13, "name": "Radiant Shine", "style": "0px 10px 14px rgba(255, 255, 255, 0.2)" },
+      { "id": 14, "name": "Glowing Halo", "style": "0px 12px 16px rgba(255, 255, 255, 0.15)" },
+      { "id": 15, "name": "Shimmering Veil", "style": "0px 14px 18px rgba(255, 255, 255, 0.2)" },
+      { "id": 16, "name": "Luminous Mist", "style": "0px 16px 20px rgba(255, 255, 255, 0.1)" },
+      { "id": 17, "name": "Glowing Radiance", "style": "0px 18px 22px rgba(255, 255, 255, 0.15)" },
+      { "id": 18, "name": "Bright Aura", "style": "0px 20px 24px rgba(255, 255, 255, 0.1)" },
+      { "id": 19, "name": "Iridescent Glow", "style": "0px 22px 26px rgba(255, 255, 255, 0.15)" }
+    ],
+    "glowingEffects": [
+      { "id": 20, "name": "Neon Glow", "style": "0px 0px 20px rgba(255, 255, 255, 0.5)" },
+      { "id": 21, "name": "Elevated Shadow", "style": "0px 10px 20px rgba(0, 0, 0, 0.2)" },
+      { "id": 22, "name": "Luminescent Aura", "style": "0px 12px 22px rgba(255, 255, 255, 0.3)" },
+      { "id": 23, "name": "Glowing Edge", "style": "0px 14px 24px rgba(255, 255, 255, 0.2)" },
+      { "id": 24, "name": "Radiant Shine", "style": "0px 16px 26px rgba(255, 255, 255, 0.15)" },
+      { "id": 25, "name": "Glowing Halo", "style": "0px 18px 28px rgba(255, 255, 255, 0.2)" },
+      { "id": 26, "name": "Shimmering Veil", "style": "0px 20px 30px rgba(255, 255, 255, 0.1)" },
+      { "id": 27, "name": "Luminous Mist", "style": "0px 22px 32px rgba(255, 255, 255, 0.15)" },
+      { "id": 28, "name": "Bright Aura", "style": "0px 24px 34px rgba(255, 255, 255, 0.1)" },
+      { "id": 29, "name": "Iridescent Glow", "style": "0px 26px 36px rgba(255, 255, 255, 0.15)" }
+    ],
+    "borderEffects": [
+      { "id": 30, "name": "Outline Shadow", "style": "0px 0px 0px 3px rgba(0, 0, 0, 0.2)" },
+      { "id": 31, "name": "Glowing Border", "style": "0px 0px 20px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 32, "name": "Frosted Glass", "style": "0px 0px 20px rgba(255, 255, 255, 0.5) inset, 0px 0px 20px rgba(0, 0, 0, 0.1)" },
+      { "id": 33, "name": "Blurred Border", "style": "0px 0px 20px rgba(0, 0, 0, 0.1) inset" },
+      { "id": 34, "name": "Illuminated Border", "style": "0px 0px 30px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 35, "name": "Subtle Radiance", "style": "0px 0px 50px rgba(255, 255, 255, 0.5)" },
+      { "id": 36, "name": "Highlight Beam", "style": "0px 0px 50px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 37, "name": "Twilight Reflection", "style": "0px 0px 70px rgba(255, 255, 255, 0.5) inset, 0px 0px 70px rgba(0, 0, 0, 0.5)" },
+      { "id": 38, "name": "Luminous Silhouette", "style": "0px 0px 70px rgba(0, 0, 0, 0.3)" },
+      { "id": 39, "name": "Nightfall Shadow", "style": "0px 0px 70px rgba(0, 0, 0, 0.5)" }
+    ],
+    "radiantEffects": [
+      { "id": 40, "name": "Eternal Glow", "style": "0px 0px 70px rgba(255, 255, 255, 0.5)" },
+      { "id": 41, "name": "Shimmering Aura", "style": "0px 0px 70px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 42, "name": "Moonlit Shadow", "style": "0px 0px 150px rgba(0, 0, 0, 0.7)" },
+      { "id": 43, "name": "Mystical Veil", "style": "0px 0px 150px rgba(0, 0, 0, 0.7) inset" },
+      { "id": 44, "name": "Radiant Glow", "style": "0px 0px 150px rgba(255, 255, 255, 0.5)" },
+      { "id": 45, "name": "Eternal Light", "style": "0px 0px 150px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 46, "name": "Divine Radiance", "style": "0px 0px 200px rgba(255, 255, 255, 0.5)" },
+      { "id": 47, "name": "Astral Aura", "style": "0px 0px 200px rgba(255, 255, 255, 0.5) inset" },
+      { "id": 48, "name": "Sunstone Radiance", "style": "0px 0px 10px rgba(205, 89, 9, 0.5), 0px 0px 40px rgba(255, 214, 122, 0.5)" },
+      { "id": 49, "name": "Heavenly Radiance", "style": "0px 0px 100px rgba(255, 255, 255, 0.5), 0px 0px 100px rgba(255, 255, 255, 0.5) inset" }
     ]
   }
   
