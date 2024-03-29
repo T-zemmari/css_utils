@@ -1,0 +1,13 @@
+.button-custom-class {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
