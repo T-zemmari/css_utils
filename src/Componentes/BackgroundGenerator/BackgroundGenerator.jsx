@@ -9,6 +9,7 @@ const BackgroundGenerator = () => {
   const [initialColor, setInitialColor] = useState("#4562f2");
   const [waveHeight, setWaveHeight] = useState(100);
   const [waveCount, setWaveCount] = useState(5);
+  const [renderWave, setRenderWave] = useState('vertical');
 
   const handleExportAsPNG = () => {
     saveSvgAsPng(document.getElementById("svg-background"), "background.png");
@@ -38,6 +39,10 @@ const BackgroundGenerator = () => {
     setWaveCount(count);
   };
 
+  const handleRenderWave = (e) => {
+    setRenderWave(e);
+  };
+
   return (
     <>
       <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[580px] p-2 sm:mt-36 flex flex-col-reverse justify-start items-start sm:gap-3 sm:flex-row sm:rounded-lg">
@@ -55,6 +60,7 @@ const BackgroundGenerator = () => {
               initialColor={initialColor}
               waveHeight={waveHeight}
               waveCount={waveCount}
+              renderWave={renderWave}
             />
           </div>
         </div>
@@ -74,7 +80,7 @@ const BackgroundGenerator = () => {
                     onChange={(e) => handleBackground(e.target.value)}
                   />
                 </div>
-                <div className="w-[3/6] flex flex-col">
+                <div className="w-[3/6] flex flex-col ">
                   <label htmlFor="">Onda:</label>
                   <input
                     className="w-[50px] h-[50px]"
@@ -84,7 +90,14 @@ const BackgroundGenerator = () => {
                   />
                 </div>
               </div>
-              <div className="w-full flex flex-col">
+              <div className="w-full flex flex-col mt-10">
+                <label htmlFor="">Dirección ondas:</label>
+                <select className="border-1 border-indigo-200 mt-2" id="select_render_ondas" onChange={(e)=>handleRenderWave(e.target.value)}>
+                  <option value="vertical">Vertical</option>
+                  <option value="horizontal">Horizontal</option>
+                </select>
+              </div>
+              <div className="w-full flex flex-col mt-2">
                 <label htmlFor="">Altura de las ondas:</label>
                 <input
                   type="range"
@@ -96,7 +109,7 @@ const BackgroundGenerator = () => {
                   }
                 />
               </div>
-              <div className="w-full flex flex-col">
+              <div className="w-full flex flex-col mt-2">
                 <label htmlFor="">Número de ondas:</label>
                 <input
                   type="range"
