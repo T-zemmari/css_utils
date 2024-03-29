@@ -44,8 +44,11 @@ const BackgroundGenerator = () => {
         <div
           className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[580px]  bg-white sm:rounded-lg`}
         >
+          <div className="w-full sm:h-3/6 flex justify-center items-start font-bold">
+            <h1 class={` text-black text-[50px]`}>BACKGROUND-WAVE</h1>
+          </div>
           <div
-            className="w-full h-full background-container contenedor_preview sm:rounded-lg relative"
+            className="w-full sm:h-3/6 background-container contenedor_preview sm:rounded-b-lg relative"
             style={{ backgroundColor: `${backgroundColor}` }}
           >
             <WaveComponent
