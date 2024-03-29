@@ -55,9 +55,9 @@ const BackgroundGenerator = () => {
 
   return (
     <>
-      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[580px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
+      <div className="w-full sm:max-w-7xl min-h-screen sm:min-h-[650px]  sm:mt-36 flex flex-col justify-start items-start sm:gap-3 sm:flex-row rounded-lg ">
         <div
-          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[580px]  bg-white sm:rounded-lg `}
+          className={`contenedor_padre_preview w-full h-full sm:w-4/6 sm:h-[650px]  bg-white sm:rounded-lg `}
         >
           <div className="w-full sm:h-3/6 flex justify-center">
             <div className="w-full h-[50%] flex flex-col justify-start items-center mt-8">
@@ -84,13 +84,15 @@ const BackgroundGenerator = () => {
         </div>
 
         <div
-          className={`contenedor_padre_taller w-full sm:w-2/6 h-[580px] mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}
+          className={`contenedor_padre_taller w-full sm:w-2/6 h-[650px] mt-24 sm:mt-0 p-2 sm:p-4 bg-white sm:rounded-lg`}
         >
           <div className="w-full h-[80%] flex justify-start items-start">
             <div className="contenedor_manipulacion w-full">
               <div className="w-full flex flex-row justify-center items-center gap-8">
                 <div className="w-[3/6] flex flex-col">
-                  <label htmlFor="">Fondo:</label>
+                  <label htmlFor="">
+                    <b>Fondo:</b>
+                  </label>
                   <input
                     className="w-[50px] h-[50px]"
                     type="color"
@@ -99,7 +101,9 @@ const BackgroundGenerator = () => {
                   />
                 </div>
                 <div className="w-[3/6] flex flex-col ">
-                  <label htmlFor="">Onda:</label>
+                  <label htmlFor="">
+                    <b>Onda:</b>
+                  </label>
                   <input
                     className="w-[50px] h-[50px]"
                     type="color"
@@ -108,10 +112,12 @@ const BackgroundGenerator = () => {
                   />
                 </div>
               </div>
-              <div className="w-full flex flex-col mt-10">
-                <label htmlFor="">Dirección ondas:</label>
+              <div className="w-full flex flex-col mt-6">
+                <label htmlFor="">
+                  <b>Dirección ondas:</b>
+                </label>
                 <select
-                  className="border-1 border-indigo-200 mt-2"
+                  className="border rounded bg-white py-2 px-4 text-gray-800 border-indigo-200 mt-3"
                   id="select_render_ondas"
                   onChange={(e) => handleRenderWave(e.target.value)}
                 >
@@ -119,8 +125,10 @@ const BackgroundGenerator = () => {
                   <option value="horizontal">Horizontal</option>
                 </select>
               </div>
-              <div className="w-full flex flex-col mt-2">
-                <label htmlFor="">Altura de las ondas:</label>
+              <div className="w-full flex flex-col mt-3">
+                <label htmlFor="">
+                  <b>Altura de las ondas:</b>
+                </label>
                 <input
                   type="range"
                   min="10"
@@ -131,8 +139,10 @@ const BackgroundGenerator = () => {
                   }
                 />
               </div>
-              <div className="w-full flex flex-col mt-2">
-                <label htmlFor="">Número de ondas:</label>
+              <div className="w-full flex flex-col mt-3">
+                <label htmlFor="">
+                  <b>Número de ondas:</b>
+                </label>
                 <input
                   type="range"
                   min="1"
@@ -143,12 +153,12 @@ const BackgroundGenerator = () => {
                   }
                 />
               </div>
-              <div className="w-full mt-4 p-4 bg-gray-100">
+              <div className="w-full mt-5 p-4 bg-gray-100">
                 <label className="block mb-2 font-semibold">
                   SVG GENERADO :
                 </label>
                 <textarea
-                  className="w-full h-24 p-2 border border-gray-300 rounded"
+                  className="w-full h-28 p-2 border border-gray-300 rounded"
                   value={svgCode}
                   readOnly
                 />
@@ -157,26 +167,26 @@ const BackgroundGenerator = () => {
           </div>
           <div className="w-full h-[20%] flex flex-col justify-center items-start border-2 rounded-lg ">
             <span className="w-full text-center text-red-400 font-bold">
-              Exportar
+              <b>Exportar</b>
             </span>
             <div className="w-full  flex justify-center items-center sm:p-2">
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded mr-4"
                 onClick={handleExportAsPNG}
               >
-                PNG
+                <b>PNG</b>
               </button>
               <button
                 className="bg-green-500 text-white px-4 py-2 rounded mr-4"
                 onClick={handleExportAsSVG}
               >
-                SVG
+                <b>SVG</b>
               </button>
               <button
                 className="bg-[#c50abe] text-white px-4 py-2 rounded mr-4"
                 onClick={handleExportAsCode}
               >
-                Code
+                <b>Code</b>
               </button>
             </div>
           </div>
