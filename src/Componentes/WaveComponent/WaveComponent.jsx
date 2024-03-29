@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const WaveComponent = ({ initialColor, waveHeight, waveCount }) => {
-  const viewBoxHeight = waveHeight * waveCount;
+  const viewBoxWidth = 100 * waveCount; 
+
+  useEffect(() => {
+    console.log("initialColor", initialColor);
+    console.log("waveHeight", waveHeight);
+    console.log("waveCount", waveCount);
+  }, [initialColor,initialColor,waveCount]);
 
   return (
     <svg
       width="100%"
       height="100%"
-      viewBox={`0 0 100 ${viewBoxHeight}`}
+      viewBox={`0 0 ${viewBoxWidth} ${waveHeight * waveCount}`}
       preserveAspectRatio="none"
       style={{ position: "absolute", bottom: 0, left: 0, zIndex: -1 }}
     >
@@ -18,10 +24,18 @@ const WaveComponent = ({ initialColor, waveHeight, waveCount }) => {
           <stop offset="100%" stopColor={initialColor} />
         </linearGradient>
       </defs>
-      <path
-        d={`M 0 ${waveHeight} Q 25 ${waveHeight * 1.5}, 50 ${waveHeight} T 100 ${waveHeight} V ${viewBoxHeight} H 0 Z`}
-        fill="url(#waveGradient)"
-      />
+      {/* Dibujar múltiples olas */}
+      {Array.from({ length: waveCount }).map((_, index) => (
+        <path
+          key={index}
+          d={`M ${index * 100} ${waveHeight} Q ${index * 100 + 25} ${
+            waveHeight * 1.5
+          }, ${index * 100 + 50} ${waveHeight} T ${
+            index * 100 + 100
+          } ${waveHeight} V ${waveHeight * 2} H ${index * 100} Z`}
+          fill="url(#waveGradient)"
+        />
+      ))}
     </svg>
   );
 };

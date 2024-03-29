@@ -88,8 +88,8 @@ const BackgroundGenerator = () => {
                 <label htmlFor="">Altura de las ondas:</label>
                 <input
                   type="range"
-                  min="50"
-                  max="200"
+                  min="10"
+                  max="500"
                   value={waveHeight}
                   onChange={(e) =>
                     handleWaveHeightChange(parseInt(e.target.value))
