@@ -80,13 +80,13 @@ const LandingPage = () => {
         <div className="lg:w-[30%] flex gap-2 md:gap-4">
           <Link
             to="/box-shadow-generator"
-            className="w-[50%] md:w-[75%] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="w-[50%] md:w-[75%] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex justify-center items-center"
           >
             Generador Box Shadow
           </Link>
           <Link
             to="/background-generator"
-            className="w-[50%] md:w-[75%] bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="w-[50%] md:w-[75%] bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 flex justify-center items-center"
           >
             Generador Background
           </Link>
