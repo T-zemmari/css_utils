@@ -11,7 +11,7 @@ CSS Utils es una aplicación que proporciona herramientas para generar propiedad
 
 1. Clona este repositorio en tu máquina local.
 2. Instala las dependencias con `npm install`.
-3. Ejecuta la aplicación con `npm start`.
+3. Ejecuta la aplicación con `npm run dev`.
 4. Navega a través de las diferentes herramientas utilizando la barra de navegación.
 5. Personaliza las propiedades según tus necesidades y genera el código CSS correspondiente.
 
