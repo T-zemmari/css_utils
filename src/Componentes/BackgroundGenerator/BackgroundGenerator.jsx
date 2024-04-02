@@ -144,7 +144,7 @@ const BackgroundGenerator = () => {
                   <option value="horizontal">Horizontal</option>
                 </select>
               </div>
-              <div className="w-full flex flex-col mt-3">
+              {/*<div className="w-full flex flex-col mt-3">
                 <label htmlFor="">
                   <b>{translation.waveHight}</b>
                 </label>
@@ -157,7 +157,7 @@ const BackgroundGenerator = () => {
                     handleWaveHeightChange(parseInt(e.target.value))
                   }
                 />
-              </div>
+              </div>*/}
               <div className="w-full flex flex-col mt-3">
                 <label htmlFor="">
                   <b>{translation.waveCountNumber}</b>

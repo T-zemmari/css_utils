@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 const WaveComponent = ({ initialColor, waveHeight, waveCount, renderWave }) => {
   const viewBoxWidth = renderWave === "horizontal" ? 100 * waveCount : 100;
-  const viewBoxHeight = renderWave === "horizontal" ? waveHeight : waveHeight * waveCount;
+  const viewBoxHeight = renderWave === "horizontal" ? 2 * waveHeight : waveHeight * waveCount;
 
  
   
@@ -35,7 +35,7 @@ const WaveComponent = ({ initialColor, waveHeight, waveCount, renderWave }) => {
           <path
             key={index}
             d={`M ${index * 100} ${waveHeight} Q ${index * 100 + 25} ${
-              waveHeight * 1.5
+              waveHeight * 2
             }, ${index * 100 + 50} ${waveHeight} T ${
               index * 100 + 100
             } ${waveHeight} V ${viewBoxHeight} H ${index * 100} Z`}
