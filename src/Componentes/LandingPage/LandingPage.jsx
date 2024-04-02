@@ -62,7 +62,7 @@ const LandingPage = () => {
     <>
       <ScrollToTopButton />
       <div
-        className="w-full min-h-screen flex flex-col mt-32 md:mt-0 justify-start md:justify-center items-center md:items-start  p-4 md:p-12"
+        className="w-full min-h-screen flex flex-col mt-32 md:mt-6 lg:mt-24 justify-start md:justify-start items-center md:items-start p-4 md:p-12"
         style={{
           backgroundImage: `url(${bgOneSvg})`,
           backgroundRepeat: "no-repeat",
@@ -70,41 +70,40 @@ const LandingPage = () => {
           backgroundSize: `${bgSize}`,
         }}
       >
-        <h1 className="text-6xl md:text-4xl lg:text-8xl font-bold mb-6 text-gray-900 sm:mt-8 lg:mt-0">
+        <h1 className="text-6xl md:text-4xl lg:text-8xl font-bold mb-6 text-[#c50abec7] sm:mt-8 lg:mt-0 ">
           CSS Utils App
         </h1>
-        <p className="w-[400px] text-2xl md:text-xl text-gray-700 mb-8">
+        <p className="w-[400px] text-2xl md:text-xl text-[#1634a7] mb-8 ml-0">
           ¡Bienvenido a CSS Utils! Esta aplicación proporciona herramientas para
           generar propiedades CSS como sombras de caja y fondos ondulados.
         </p>
-        <div className="flex gap-2 md:gap-4">
+        <div className="lg:w-[30%] flex gap-2 md:gap-4">
           <Link
             to="/box-shadow-generator"
-            className="w-[50%] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="w-[50%] md:w-[75%] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Generador Box Shadow
           </Link>
           <Link
             to="/background-generator"
-            className="w-[50%] bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            className="w-[50%] md:w-[75%] bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
           >
             Generador Background
           </Link>
         </div>
-        <div className="flex justify-center items-center gap-4">
+        <div className="w-full flex justify-center items-center gap-4">
           <button
-            className="w-[150px] h-[150px] rounded-full bg-[#ffb4b9] mt-10 text-white font-bold"
+            className="w-[150px] h-[150px] rounded-full bg-[#c50abe] mt-10 text-white font-bold"
             onClick={() => handleClickGoToBoxShadows("box_shadows_container")}
           >
             BOXSHADOWS
           </button>
         </div>
       </div>
-      <div className="w-full max-w-7xl min-h-screen p-2 md:p-12 flex flex-col items-center">
+      <div className="w-full max-w-7xl min-h-screen p-2 md:p-12 flex flex-col items-center" id="box_shadows_container">
         <hr />
         <h1
-          className="text-[#71731f] text-[36px] md:text-[56px] font-bold  md:mt-12"
-          id="box_shadows_container"
+          className="text-[#71731f] text-[36px] md:text-[56px] font-bold  md:mt-12"    
         >
           BOX-SHADOWS
         </h1>
