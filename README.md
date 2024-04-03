@@ -29,4 +29,8 @@ In addition to custom box shadows, CSS Utils App also provides several pre-desig
 ![Pre-designed Box Shadows](./src/assets/imgs/box_shadows_1.png)
 ![Pre-designed Box Shadows](./src/assets/imgs/box_shadows_2.png)
 
+## Future Improvements
+
+Stay tuned for future updates! We are continuously working to enhance the wave generation feature for even better results.
+
 Enjoy the CSS generation experience with CSS Utils App!
