@@ -1,6 +1,6 @@
 # CSS Utils App
 
-![CSS Utils Landing](./src/assets/imgs/css_utils_landing_2.png)
+![CSS Utils Landing](./src/assets/imgs/css_utils_landing_1.png)
 
 CSS Utils is an application built with React and Tailwind CSS. It provides tools for generating CSS properties such as box shadows and wavy backgrounds.
 
