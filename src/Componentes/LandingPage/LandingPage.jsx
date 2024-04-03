@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import SwAlert from "../SwAlert/SwAlert";
 import ScrollToTopButton from "../ButtonScrollToTop/ButtonScrollToTop";
 import { Link } from "react-router-dom";
-import bgOneSvg from "../../assets/svgs/background_4.svg";
+import bgOneSvg from "../../assets/imgs/background_1.png";
 
 const LandingPage = () => {
   const [bgSize, setBgSize] = useState("contain");

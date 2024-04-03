@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { saveSvgAsPng } from "save-svg-as-png";
 import { saveAs } from "file-saver";
 import WaveComponent from "../WaveComponent/WaveComponent";
@@ -11,7 +11,7 @@ const BackgroundGenerator = () => {
   const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
   const [initialColor, setInitialColor] = useState("#4562f2");
   const [waveHeight, setWaveHeight] = useState(100);
-  const [waveCount, setWaveCount] = useState(5);
+  const [waveCount, setWaveCount] = useState(2);
   const [renderWave, setRenderWave] = useState("vertical");
   const [language, setLanguage] = useState("en");
 
@@ -19,6 +19,15 @@ const BackgroundGenerator = () => {
   const translation = translations[language];
 
   const [svgCode, setSvgCode] = useState("");
+
+
+
+  const handleExportAsCode = () => {
+    const svgData = new XMLSerializer().serializeToString(
+      document.getElementById("svg-background")
+    );
+    setSvgCode(svgData);
+  };
 
   const handleExportAsSVG = () => {
     const svgData = new XMLSerializer().serializeToString(
@@ -28,16 +37,45 @@ const BackgroundGenerator = () => {
     saveAs(blob, "background.svg");
   };
 
-  const handleExportAsCode = () => {
-    const svgData = new XMLSerializer().serializeToString(
-      document.getElementById("svg-background")
-    );
-    setSvgCode(svgData);
-  };
-
   const handleExportAsPNG = () => {
-    saveSvgAsPng(document.getElementById("svg-background"), "background.png");
+    const svg = document.getElementById("svg-background");
+  
+    const width = svg.clientWidth;
+    const height = svg.clientHeight;
+  
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+  
+    const ctx = canvas.getContext("2d");
+  
+    // Crear una nueva imagen
+    const img = new Image();
+  
+    // Convertir el SVG en una URL de datos
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const svgUrl = `data:image/svg+xml;base64,${btoa(svgData)}`;
+  
+    // Cargar la imagen SVG en la imagen
+    img.onload = () => {
+      // Dibujar la imagen SVG en el lienzo
+      ctx.drawImage(img, 0, 0, width, height);
+  
+      // Obtener la URL de datos de la imagen del lienzo
+      const imgDataUrl = canvas.toDataURL("image/png");
+  
+      // Descargar la imagen PNG
+      const link = document.createElement("a");
+      link.download = "background.png";
+      link.href = imgDataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+  
+    img.src = svgUrl;
   };
+  
 
   const handleBackground = (color) => {
     setBackgroundColor(color);
