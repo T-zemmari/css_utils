@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import SwAlert from "../SwAlert/SwAlert";
 import ScrollToTopButton from "../ButtonScrollToTop/ButtonScrollToTop";
 import { Link } from "react-router-dom";
-import bgOneSvg from "../../assets/imgs/background_1.png";
+import bgOneSvg from "../../assets/imgs/background_2.png";
 
 const LandingPage = () => {
-  const [bgSize, setBgSize] = useState("contain");
+  const [bgSize, setBgSize] = useState("cover");
 
   const lightShadows = shadowsJson.lightShadows;
   const aggressiveShadows = shadowsJson.aggressiveShadows;
@@ -21,9 +21,9 @@ const LandingPage = () => {
     const resize = () => {
       let widthWindows = window.innerWidth;
       if (widthWindows <= 768) {
-        setBgSize(`950%`);
+        setBgSize(`450%`);
       } else {
-        setBgSize(`contain`);
+        setBgSize(`cover`);
       }
     };
 
@@ -69,10 +69,10 @@ const LandingPage = () => {
           backgroundSize: `${bgSize}`,
         }}
       >
-        <h1 className="text-4xl md:text-4xl lg:text-8xl font-bold mb-6 text-[#c50abec7] sm:mt-8 lg:mt-24 lg:ml-40 ">
+        <h1 className="text-4xl md:text-4xl lg:text-8xl font-bold mb-6 text-[#c50abec7] mt-6 sm:mt-8 lg:mt-24 lg:ml-40  ">
           CSS Utils App
         </h1>
-        <p className="w-[400px] py-10 px-4 md:py-0 md:px-0 text-xl md:text-xl text-[#1634a7] mb-8 ml-0 lg:ml-40">
+        <p className="w-[400px] py-2 px-4  md:py-0 md:px-0 text-xl md:text-xl text-[#1634a7] mb-8 ml-0 lg:ml-40">
           ¡Bienvenido a CSS Utils! Esta aplicación proporciona herramientas para
           generar propiedades CSS como sombras de caja y fondos ondulados.
         </p>

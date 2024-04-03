@@ -40,14 +40,21 @@ const BackgroundGenerator = () => {
   const handleExportAsPNG = () => {
     const svg = document.getElementById("svg-background");
   
+    // Obtener las dimensiones del SVG
     const width = svg.clientWidth;
     const height = svg.clientHeight;
   
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
+    // Definir un factor de escala para aumentar la resolución
+    const scaleFactor = 2; 
   
+    // Crear un lienzo HTML del tamaño ampliado
+    const canvas = document.createElement("canvas");
+    canvas.width = width * scaleFactor;
+    canvas.height = height * scaleFactor;
+  
+    // Obtener el contexto del lienzo y aplicar el factor de escala
     const ctx = canvas.getContext("2d");
+    ctx.scale(scaleFactor, scaleFactor);
   
     // Crear una nueva imagen
     const img = new Image();
@@ -58,9 +65,8 @@ const BackgroundGenerator = () => {
   
     // Cargar la imagen SVG en la imagen
     img.onload = () => {
-      // Dibujar la imagen SVG en el lienzo
+
       ctx.drawImage(img, 0, 0, width, height);
-  
       // Obtener la URL de datos de la imagen del lienzo
       const imgDataUrl = canvas.toDataURL("image/png");
   
@@ -75,6 +81,7 @@ const BackgroundGenerator = () => {
   
     img.src = svgUrl;
   };
+  
   
 
   const handleBackground = (color) => {
