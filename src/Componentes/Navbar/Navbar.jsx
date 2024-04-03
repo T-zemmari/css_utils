@@ -11,14 +11,14 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="w-full flex justify-between">
             <div className="flex items-center">
-              <Link to={"/"}>
+              <Link to={"/css_utils"}>
                 <img
                   className="block lg:hidden h-8 w-auto"
                   src={Logo}
                   alt="Logo"
                 />
               </Link>
-              <Link to={"/"}>
+              <Link to={"/css_utils"}>
                 <img
                   className="hidden lg:block h-8 w-auto"
                   src={Logo}
@@ -27,12 +27,12 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:flex justify-end items-center">
-              <Link to={`/box-shadow-generator`}>
+              <Link to={`/css_utils/box-shadow-generator`}>
                 <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Box-shadow
                 </span>
               </Link>
-              <Link to={`/background-generator`}>
+              <Link to={`/css_utils/background-generator`}>
                 <span className="text-gray-300 hover:bg-orange-500 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                   Bg-Waves
                 </span>
@@ -83,12 +83,12 @@ const Navbar = () => {
 
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link to={`/box-shadow-generator`}>
+          <Link to={`/css_utils/box-shadow-generator`}>
             <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Box-shadow
             </span>
           </Link>
-          <Link to={`/background-generator`}>
+          <Link to={`/css_utils/background-generator`}>
             <span className="text-gray-300 hover:bg-orange-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               Bg-Waves
             </span>

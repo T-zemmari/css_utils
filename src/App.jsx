@@ -13,14 +13,14 @@ function App() {
         <div className="App">
           <Navbar />
           <Routes>
-            <Route path="/" exact element={<LandingPage />} />
+            <Route path="/css_utils" exact element={<LandingPage />} />
             <Route
-              path="/box-shadow-generator"
+              path="/css_utils/box-shadow-generator"
               exact
               element={<BoxShadowGeneretor />}
             />
             <Route
-              path="/background-generator"
+              path="/css_utils/background-generator"
               exact
               element={<BackgroundGenerator />}
             />
