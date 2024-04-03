@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import SwAlert from "../SwAlert/SwAlert";
 import ScrollToTopButton from "../ButtonScrollToTop/ButtonScrollToTop";
 import { Link } from "react-router-dom";
-import bgOneSvg from "../../assets/svgs/background_2.svg";
+import bgOneSvg from "../../assets/svgs/background_3.svg";
 
 const LandingPage = () => {
-  const [boxSelected, setBoxselected] = useState("");
   const [bgSize, setBgSize] = useState("contain");
 
   const lightShadows = shadowsJson.lightShadows;
@@ -70,14 +69,14 @@ const LandingPage = () => {
           backgroundSize: `${bgSize}`,
         }}
       >
-        <h1 className="text-6xl md:text-4xl lg:text-8xl font-bold mb-6 text-[#c50abec7] sm:mt-8 lg:mt-0 ">
+        <h1 className="text-6xl md:text-4xl lg:text-8xl font-bold mb-6 text-[#c50abec7] sm:mt-8 lg:mt-0 lg:ml-40 ">
           CSS Utils App
         </h1>
-        <p className="w-[400px] text-2xl md:text-xl text-[#1634a7] mb-8 ml-0">
+        <p className="w-[400px] text-2xl md:text-xl text-[#1634a7] mb-8 ml-0 lg:ml-40">
           ¡Bienvenido a CSS Utils! Esta aplicación proporciona herramientas para
           generar propiedades CSS como sombras de caja y fondos ondulados.
         </p>
-        <div className="lg:w-[30%] flex gap-2 md:gap-4">
+        <div className="lg:w-[30%] flex gap-2 md:gap-4 lg:ml-40">
           <Link
             to="/box-shadow-generator"
             className="w-[50%] md:w-[75%] bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 flex justify-center items-center"
