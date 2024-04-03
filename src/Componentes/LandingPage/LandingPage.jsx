@@ -74,7 +74,7 @@ const LandingPage = () => {
         </h1>
         <p className="w-[400px] py-2 px-4  md:py-0 md:px-0 text-xl md:text-xl text-[#1634a7] mb-8 ml-0 lg:ml-40">
           ¡Bienvenido a CSS Utils! Esta aplicación proporciona herramientas para
-          generar propiedades CSS como sombras de caja y fondos ondulados.
+          generar propiedades CSS como BOX-SHADOW y BACKGROUND ondulados.
         </p>
         <div className="w-full md:w-[30%] flex gap-2 md:gap-4 lg:ml-40 p-4 lg:p-0 md:absolute md:top-16 md:right-4 md:flex-col lg:top-[400px] lg:left-12
         ">
